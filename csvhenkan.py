@@ -1,6 +1,7 @@
 import csv
 import sys
 import os
+sys.path.append(os.path.dirname(sys.argv[0]))
 import customexception as cex
 
 # メイン処理実行

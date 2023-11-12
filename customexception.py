@@ -32,7 +32,7 @@ class CustArgNoFilePathNoFilePathException(CustBaseException):
         発生原因：引数に指定された[引数１]は正しいファイルのパスではありません。\n発生場所：[引数２]
         """
         return (
-            f"発生原因：引数に指定された[{self.arg1}]は正しいファイルのパスではありません。\n発生場所：[{self.arg2}]"
+            f"\n発生原因：引数に指定された[{self.arg1}]は正しいファイルのパスではありません。\n発生場所：[{self.arg2}]"
         )
 
 class CustArgNoSetException(CustBaseException):
@@ -45,5 +45,5 @@ class CustArgNoSetException(CustBaseException):
         発生原因：引数に[引数１]がセットされていません。\n発生場所：[引数２]
         """
         return (
-            f"発生原因：引数に[{self.arg1}]がセットされていません。\n発生場所：[{self.arg2}]"
+            f"\n発生原因：引数に[{self.arg1}]がセットされていません。\n発生場所：[{self.arg2}]"
         )
