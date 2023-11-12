@@ -10,13 +10,16 @@ def main_run():
         # print(sys.argv[0])
         # print(sys.argv[1])
 
+        # プログラム引数取得
         try:
             args1 = sys.argv[1]
         except IndexError as e:
             print("ファイルのパスが指定されていません。")
+            raise cex.CustArgNoSetException("プログラムの第一引数のCSVのファイルのパス", "プログラム引数取得")
         except Exception as e:
             print(e)
-    
+
+        # csvファイルの存在チェック
         if os.path.isfile(args1):
             print("ファイルが存在します。")
             csvfile_path = args1
@@ -25,7 +28,7 @@ def main_run():
             csvfile_path = os.getcwd() + "\\" + args1
         else:
             print("ファイルが存在しません。")
-            raise cex.CustArgNoFilePathNoFilePathException(args1)
+            raise cex.CustArgNoFilePathNoFilePathException(args1,"CSVファイルの存在チェック")
     except Exception as e:
         print(e)
         raise Exception
